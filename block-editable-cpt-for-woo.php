@@ -8,7 +8,7 @@
  * Requires at least: 5.6
  * Requires PHP: 5.6
  * Author: Rocket Martue
- * Author URI: https://web-ya3.com
+ * Author URI: https://profiles.wordpress.org/rocketmartue/
  * License: GPL2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: block-editable-cpt-for-woo
