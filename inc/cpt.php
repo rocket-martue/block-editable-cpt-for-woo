@@ -28,7 +28,7 @@ add_action(
 			'supports'           => array( 'title', 'editor', 'revisions' )
 		);
 		register_post_type( 'product_content', $args );
-	},
+	}
 );
 
 add_filter(
