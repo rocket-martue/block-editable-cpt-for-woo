@@ -34,4 +34,4 @@ __*
 # --------------------------------------------------------
 
 # track these files, if they exist
-!.gitignore
+# !.gitignore
