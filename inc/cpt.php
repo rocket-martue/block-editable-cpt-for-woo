@@ -8,9 +8,9 @@
 add_action(
 	'init',
 	function() {
-		// Register custom post type "product-content"
+		// Register custom post type "Product Description."
 		$labels = array(
-		 'name' => __( 'Product Contents', 'block-editable-cpt-for-woo' ),
+		 'name' => __( 'Product Description', 'block-editable-cpt-for-woo' ),
 		);
 		$args = array(
 			'labels'             => $labels,
@@ -21,13 +21,13 @@ add_action(
 			'show_ui'            => true,
 			'show_in_rest'       => true,
 			'query_var'          => true,
-			'rewrite'            => array( 'slug' => 'product-content' ),
+			'rewrite'            => array( 'slug' => 'product_desc' ),
 			'capability_type'    => 'post',
 			'has_archive'        => false,
 			'hierarchical'       => false,
 			'supports'           => array( 'title', 'editor', 'revisions' )
 		);
-		register_post_type( 'product_content', $args );
+		register_post_type( 'product_desc', $args );
 	}
 );
 
@@ -35,7 +35,7 @@ add_filter(
 	'manage_posts_columns',
 	function ( $columns ) {
 		global $post_type;
-		if( in_array( $post_type, array( 'product_content' ) ) ) {
+		if( in_array( $post_type, array( 'product_desc' ) ) ) {
 			$new_columns = array(
 				'shortcode' => esc_html__( 'Shortcode', 'block-editable-cpt-for-woo' ),
 			);
@@ -51,7 +51,7 @@ add_filter(
 		if ( 'shortcode' === $column_name ) {
 			$post = get_post( $post_id );
 			$slug = $post->post_name;
-			echo '<span class="product_content-short-code">[product_content slug=' . esc_html( $slug ) . ']</span>';
+			echo '<span class="product_desc-short-code">[product_desc slug=' . esc_html( $slug ) . ']</span>';
 		}
 	},
 	10,
@@ -65,14 +65,14 @@ add_filter(
  *
  * @return string
  */
-function product_content_shortcode( $atts ) {
+function product_desc_shortcode( $atts ) {
 	extract( shortcode_atts(
 		array(
 			'slug' => '',
 		), $atts ) );
 	ob_start();
 	$args = array(
-		'post_type' => array( 'product_content' ),
+		'post_type' => array( 'product_desc' ),
 		'name'      => $slug,
 	);
 	$query = new WP_Query( $args );
@@ -87,4 +87,4 @@ function product_content_shortcode( $atts ) {
 	ob_end_clean();
 	return $html;
 }
-add_shortcode( 'product_content', 'product_content_shortcode' );
+add_shortcode( 'product_desc', 'product_desc_shortcode' );
