@@ -33,7 +33,7 @@ add_action(
 
 register_activation_hook(
 	__FILE__,
-	function my_rewrite_flush() {
+	function() {
 		my_cpt_init();
 		flush_rewrite_rules();
 	}
