@@ -1,14 +1,14 @@
 <?php
 /**
  * Plugin Name: Block editable Custom post type for woo
- * Plugin URI: https://github.com/rocket-martue/block-editable-cpt-for-woo
  * Description: This plugin adds block editable custom post type for woo. It also allows you to easily insert blocks into your products using a shortcode.
- * Version: 0.0.1
- * Tested up to: 5.7
+ * Version: 1.0.0
+ * Tested up to: 5.8
  * Requires at least: 5.6
  * Requires PHP: 5.6
  * Author: Rocket Martue
  * Author URI: https://profiles.wordpress.org/rocketmartue/
+ * Update URI: block-editable-cpt-for-woo
  * License: GPL2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: block-editable-cpt-for-woo
