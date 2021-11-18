@@ -31,6 +31,14 @@ add_action(
 	}
 );
 
+register_activation_hook(
+	__FILE__,
+	function my_rewrite_flush() {
+		my_cpt_init();
+		flush_rewrite_rules();
+	}
+);
+
 add_filter(
 	'manage_posts_columns',
 	function ( $columns ) {
