@@ -7,10 +7,14 @@
  * @package block-editable-cpt-for-woo
  */
 function product_content_shortcode( $atts ) {
-	extract( shortcode_atts(
-		array(
-			'slug' => '',
-		), $atts ) );
+	extract(
+		shortcode_atts(
+			array(
+				'slug' => '',
+			),
+			$atts,
+		)
+	);
 	ob_start();
 	$args = array(
 		'post_type' => array( 'product_content' ),
