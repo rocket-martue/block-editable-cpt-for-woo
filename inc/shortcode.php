@@ -6,7 +6,7 @@
  * @return string
  * @package block-editable-cpt-for-woo
  */
-function product_content_shortcode( $atts ) {
+function product_desc_shortcode( $atts ) {
 	extract(
 		shortcode_atts(
 			array(
@@ -17,7 +17,7 @@ function product_content_shortcode( $atts ) {
 	);
 	ob_start();
 	$args = array(
-		'post_type' => array( 'product_content' ),
+		'post_type' => array( 'product_desc' ),
 		'name'      => $slug,
 	);
 	$query = new WP_Query( $args );
@@ -32,4 +32,4 @@ function product_content_shortcode( $atts ) {
 	ob_end_clean();
 	return $html;
 }
-add_shortcode( 'product_content', 'product_content_shortcode' );
+add_shortcode( 'product_desc', 'product_desc_shortcode' );
